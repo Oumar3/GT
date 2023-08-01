@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<section style="background-color: rgb(235, 226, 226);">
+    <!-- Page content-->
+    <div class="container">
+       <div class="row">
+            <div class="col-lg-6 my-3"></div>
+               <!-- Post content-->
+               <article>
+                   <!-- Post header-->
+                   <header class="mb-4">
+                       <!-- Post title-->
+                       <h3 class="card-title">{{info.title}}</h3>
+                       <!-- Post meta content-->
+                       <div class="text-muted fst-italic mb-2"> 
+                           <p class="card-text">{{info.intro}}</p>
+                       </div>
+                       <p>{{info.date_pub}}</p>
+                   </header>
+                   <!-- Preview image figure-->
+                   <figure class="mb-4"><img class="card-img-top" src="{{info.img.url}}"  alt=""></figure>
+                   <!-- Post content-->
+                   <section class="mb-5">
+                       <p>{{info.body}}</p>
+                   </section>
+               </article>
+            </div>
+        </div>
+    </div>
+    </section>
+    
+    
+
+{% endblock%}

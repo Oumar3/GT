@@ -1,0 +1,49 @@
+<section id="featured-services" class="featured-services my-2" style="  background: #acc8f0;">
+<h2 class="h2 text-center">Les Evenements</h2>
+
+  <div class="container bg-grey" data-aos="fade-up">
+    <div class="row">
+        {% for inf in annonces %}
+      <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-1 mb-lg-0">
+        <div class="card mx-2">
+          <img src="{{inf.img.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{inf.title}}</h5>
+            <p class="card-text">{{inf.intro}}</p>
+            <a class="btn btn-primary" href="{% url 'detail' inf.id %}">Lire Plus</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      </div>
+    </div>
+</section>
+
+
+{% comment %} 
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="bx bx-file"></i></div>
+            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bx bx-tachometer"></i></div>
+            <h4 class="title"><a href="">Magni Dolores</a></h4>
+            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="bx bx-world"></i></div>
+            <h4 class="title"><a href="">Nemo Enim</a></h4>
+            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+          </div>
+        </div>
+ {% endcomment %}

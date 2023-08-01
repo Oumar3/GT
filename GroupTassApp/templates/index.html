@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+
+{% load static %}
+
+
+  <!-- ======= Hero Section ======= -->
+  {% include 'hero.html'%}
+ 
+  <!-- End Hero -->
+
+  <main id="main">
+
+    {% include 'annonce.html' %}
+
+    <!-- End Counts Section -->
+
+    <!-- ======= Clients Section ======= -->
+    <!-- End Clients Section -->
+    
+    <!-- ======= Services Section ======= -->
+    {% include 'service.html'%}
+    <!-- End Services Section -->
+
+     <!-- ======= About Section ======= -->
+     {% include 'apropos.html' %}
+     <!-- End About Section -->
+    
+    {% load static %}
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">    
+            {% for item in citation %}
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{{item.image.url}}" class="testimonial-img" alt="">
+                <h3>{{item.nom}}</h3>
+                <h4>{{item.post}}</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  {{item.mot}}
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+              {%endfor%}
+            </div><!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- End Testimonials Section -->
+    <!-- ======= Team Section ======= -->
+
+    {% comment %} Debut Team {% endcomment %}
+<section id="team" class="team section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h1>NOTRE EQUIPE</h1>
+    </div>
+    <div class="row">
+      {% for inf in teams %}
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <div class="member">
+          <div class="member-img">
+            <img src="{{inf.image.url}}" class="img-fluid" alt="">
+            <div class="social">
+              <a href="{{inf.twitter}}"><i class="bi bi-twitter"></i></a>
+              <a href="{{inf.facebook}}"><i class="bi bi-facebook"></i></a>
+              <a href="{{inf.instagram}}"><i class="bi bi-instagram"></i></a>
+              <a href="{{inf.linkedin}}"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4>{{inf.nom}}</h4>
+            <span>{{inf.post}}</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      
+    </div>
+    
+  </div>
+</section>
+{% comment %} Fin Team {% endcomment %}
+
+    <!-- End Team Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <!-- End Frequently Asked Questions Section -->
+    
+    <!-- ======= Contact Section ======= -->
+    {% include 'contact.html'%}
+    <!-- End Contact Section -->
+
+
+    {% comment %} <div class="container">
+   <form method="post" action="{% url 'contact_form' %}">
+    {% csrf_token %}
+  
+          <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required>
+   
+
+          <input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" required>
+
+          <input type="text" name="objet" class="form-control" id="objet" placeholder="objet" required>
+
+          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+
+    <button type="submit" class="btn ">Envoyer</button>
+   </form>
+    </div> {% endcomment %}
+    
+  </main><!-- End #main -->
+  <h1 class="h1 text-center">Nos partenaires</h1>
+  {% include 'partenaire.html' %}
+  <!-- ======= Footer ======= -->
+  
+
+
+
+
+    
+{% endblock %}
+
+
